@@ -18,9 +18,9 @@ def webServer(port=13331):
   while True:
     #Establish the connection
     
-    print('Ready to serve...')
+    #print('Ready to serve...')
     connectionSocket, addr = serverSocket.accept()
-    print('Connection from: ', addr)
+    #print('Connection from: ', addr)
     try:
       message = connectionSocket.recv(1024).decode()
       filename = message.split()[1]
