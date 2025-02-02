@@ -61,15 +61,15 @@ def webServer(port=13331):
       # Send response message for invalid request due to the file not being found (404)
       # Remember the format you used in the try: block!
       #Fill in start
-      error_header = "HTTP/1.1 404 Not Found\r\n"
-      error_outputdata = "Content-Type: text/html; charset=UTF-8\r\n"
-      error_response_header = error_header + error_outputdata + "\r\n"
+      nf_header = "HTTP/1.1 404 Not Found\r\n"
+      nf_header += "Content-Type: text/html; charset=UTF-8\r\n"
+      nf_header += "\r\n"
 
       # Error message body
-      error_message = "<html><body><h1>404 Not Found</h1></body></html>"
+      nf_message = nf_header + "<html><body><h1>404 Not Found</h1></body></html>"
 
       # Send the error response headers and message
-      connectionSocket.sendall(error_response_header.encode())
+      connectionSocket.sendall(nf_message.encode())
       #Fill in end
 
 
